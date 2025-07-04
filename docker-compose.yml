@@ -1,31 +1,26 @@
-version: '2'
 services:
   db:
     image: postgres:17
-    user: root
+    ports:
+      - "5432:5432"
     environment:
       - POSTGRES_USER=odoo
       - POSTGRES_PASSWORD=odoo
-      - POSTGRES_DB=postgres
-    restart: always
+      - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
-      - ./postgresql:/var/lib/postgresql/data
+      - odoo-db-data:/var/lib/postgresql/data
 
   odoo18:
-    image: odoo:18
-    user: root
+    image: odoo:18.0
     depends_on:
       - db
     ports:
-      - "10018:8069"
-      - "20018:8072"
-    tty: true
-    environment:
-      - HOST=db
-      - USER=odoo
-      - PASSWORD=odoo
-      - PIP_BREAK_SYSTEM_PACKAGES=1
+      - "8068:8069"
     volumes:
-      - "D:/odoo compose/odoo-18-docker-compose/odoo.conf:/etc/odoo/odoo.conf"
-      - "./addons:/mnt/extra-addons"
-    restart: always
+      - odoo-web-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+    command: odoo -d odoo_db -u estate --dev=xml --db_user=odoo --db_password=odoo --db_host=db
+volumes:
+  odoo-web-data:
+  odoo-db-data:
