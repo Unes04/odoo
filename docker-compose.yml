@@ -26,8 +26,6 @@ services:
       - PASSWORD=odoo
       - PIP_BREAK_SYSTEM_PACKAGES=1
     volumes:
-    - ./odoo.conf:/etc/odoo/odoo.conf  # Add :ro for read-only
-    - ./entrypoint.sh:/entrypoint.sh
-    - ./addons:/mnt/extra-addons
-    - ./etc:/etc/odoo
+      - "D:/odoo compose/odoo-18-docker-compose/odoo.conf:/etc/odoo/odoo.conf"
+      - "./addons:/mnt/extra-addons"
     restart: always
