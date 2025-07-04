@@ -43,8 +43,8 @@
                     </group>
 
                     <group string="Features">
-                        <field name="garage"/>
                         <field name="garden"/>
+                        <field name="garage"/>
                         <field name="garden_area" attrs="{'invisible': [('garden', '=', False)]}"/>
                         <field name="garden_orientation" attrs="{'invisible': [('garden', '=', False)]}"/>
                     </group>
