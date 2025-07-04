@@ -13,15 +13,15 @@
         </field>
     </record>
 
-    <record id="view_property_offer_tree" model="ir.ui.view">
-        <field name="name">estate.property.offer.tree</field>
+    <record id="view_property_offer_list" model="ir.ui.view">
+        <field name="name">estate.property.offer.list</field>
         <field name="model">estate.property.offer</field>
         <field name="arch" type="xml">
-            <tree string="Property Offer">
+            <list string="Property Offer">
                 <field name="price"/>
                 <field name="partner_id"/>
                 <field name="status"/>
-            </tree>
+            </list>
         </field>
     </record>
 
