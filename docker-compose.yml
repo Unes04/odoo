@@ -26,8 +26,8 @@ services:
       - PASSWORD=odoo
       - PIP_BREAK_SYSTEM_PACKAGES=1
     volumes:
-      - ./odoo.conf:/etc/odoo/odoo.conf  # Add this line
-      - ./entrypoint.sh:/entrypoint.sh
-      - ./addons:/mnt/extra-addons
-      - ./etc:/etc/odoo
+    - ./odoo.conf:/etc/odoo/odoo.conf:ro  # Add :ro for read-only
+    - ./entrypoint.sh:/entrypoint.sh
+    - ./addons:/mnt/extra-addons
+    - ./etc:/etc/odoo
     restart: always
