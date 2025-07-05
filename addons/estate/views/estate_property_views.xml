@@ -45,8 +45,8 @@
                     <group string="Features">
                         <field name="garden"/>
                         <field name="garage"/>
-                        <field name="garden_area" attrs="{'invisible': [('garden', '=', False)]}"/>
-                        <field name="garden_orientation" attrs="{'invisible': [('garden', '=', False)]}"/>
+                        <field name="garden_area" />
+                        <field name="garden_orientation" />
                     </group>
 
                     <notebook>
@@ -69,8 +69,6 @@
                             <field name="salesperson_id"/>
                             <field name="buyer_id"/>
                         </page>
-                    </notebook>
-                    <notebook>
                         <page string="Offers">
                             <field name="offer_ids">
                                 <list editable="bottom">
