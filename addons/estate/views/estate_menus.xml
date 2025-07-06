@@ -1,6 +1,6 @@
 <!-- estate/views/estate_menus.xml -->
 <odoo>
-    <menuitem id="estate_menu_root" name="Real Estate"/>
+    <menuitem id="menu_estate_root" name="Estate" sequence="10"/>
 
     <menuitem id="estate_menu_properties" name="Properties" parent="estate_menu_root"/>
 
