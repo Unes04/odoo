@@ -8,4 +8,9 @@
               name="Properties"
               parent="estate_menu_properties"
               action="estate_property_action"/>
+
+    <menuitem id="menu_property_type"
+              name="Property Types"
+              parent="menu_estate_root"
+              action="action_property_type"/>
 </odoo>

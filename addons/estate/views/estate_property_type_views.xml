@@ -24,12 +24,9 @@
     <record id="action_property_type" model="ir.actions.act_window">
         <field name="name">Property Types</field>
         <field name="res_model">estate.property.type</field>
-        <field name="view_mode">form</field>
+        <field name="view_mode">tree, form</field>
     </record>
 
-    <menuitem id="menu_property_type"
-            name="Property Types"
-            parent="menu_estate_root"
-            action="action_property_type"/>
+    
 
 </odoo>
