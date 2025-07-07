@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api # type: ignore
 
 class EstatePropertyTag(models.Model):
     _name = 'estate.property.tag'
