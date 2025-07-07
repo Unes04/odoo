@@ -6,14 +6,12 @@ class EstatePropertyOffer(models.Model):
     _description = 'Real Estate Property Offer'
     
     price = fields.Float()
-    status = fields.Selection(
-        selection=[('accepted', 'Accepted'), ('refused', 'Refused')],
-        copy=False
-    )
     partner_id = fields.Many2one('res.partner', required=True)
+    validity = fields.Integer(default=7)
+    date_deadline = fields.Date(compute='_compute_date_deadline', inverse='_inverse_date_deadline', store=True)
+    status = fields.Selection([('accepted', 'Accepted'), ('refused', 'Refused')], copy=False)
     property_id = fields.Many2one('estate.property', required=True)
     
-    # Add these fields
     validity = fields.Integer(default=7)
     date_deadline = fields.Date(
         compute='_compute_date_deadline',
